@@ -162,7 +162,7 @@ end
 
 ```{julia}
 # REQUIRED: You MUST choose a different station than the default
-my_stnid = 111
+my_stnid = 779
 
 my_station = @chain stations begin
 	@filter(stnid == !!my_stnid)
@@ -184,7 +184,8 @@ println("Years of data: $(my_station.years_of_data)")
 
 ::: {.callout-note}
 ## Response 1
-Explain why you chose this particular station and what makes it suitable for GEV analysis. Consider factors like data length, geographic location, and data completeness.
+
+I chose Galveston because it has 146 years of data, which is a lot!  It's also coastal and higly vulnerable, so we might be able to see interesting data from big tropical cyclones.  There is a risk that big TC's become outliers that make GEV harder, but it could still be an interesting case study.  
 :::
 
 Let's visualize your chosen station's rainfall time series:
@@ -403,7 +404,10 @@ plot_gev_comparison(my_precip, extremes_dist, extremes_pwm_dist, turing_dist, my
 
 ::: {.callout-note}
 ## Response 2
-Analyze how the three fitting approaches compare. Address parameter differences, return level estimates, and provide explanations for any discrepancies you observe between the MLE, PWM, and Bayesian methods.
+
+Extremes MLE and Extremes PWM are almost identical, which makes sense, because these are both GEV MLE methods.  Extremes PWM branchse out a little further, with a shape parameter that shifts it out a little bit more to the right, as if it's trying harder to incorporate an outlier data point than the other two methods.  
+
+MLE maximizes the product of the probability density function for each data point, so it makes sense that these functions would gravitate closer towards the norm for most of the non-outliers. 
 :::
 
 ## Multi-Station Analysis
@@ -570,7 +574,10 @@ plot_multi_station_comparison(station_fits, station_info)
 
 ::: {.callout-note}
 ## Response 3
-Analyze the spatial patterns in your multi-station comparison. Address whether the station similarities or differences are credible, what this reveals about spatial variability in extreme precipitation, and how geographical factors (elevation, proximity to coast, urban effects, etc.) might explain the patterns you observe.
+
+The red line, which is the second highest in tersm of return level, if the closest to our original station and is still on the island of Galveston.  It makes sense that this station would be one of the highest, due to its vulnerable position on the coast, although it's interesting that it's surpassed by an inland station at Armand Bayou and Genoa Red Road (Purple Line).
+
+To be fair, this location is still relatively close to the coast and on the edge of Galveston Bay, so it seeing a lot of rainfall isn't out of the question. 
 :::
 
 ## Uncertainty Analysis: Synthetic Experiment
@@ -759,13 +766,17 @@ plot_uncertainty_experiment(experiment_results, true_gev, return_period)
 
 ::: {.callout-note}
 ## Response 4
-What sample size would you consider adequate for reliable GEV parameter estimation?
-How does this synthetic experiment inform your interpretation of the real station analyses from earlier in the lab?
-Is the uncertainty observed in this experiment an upper or a lower bound for the uncertainty in real-world applications, and why?
+Even with 100 years of data, we still have a decent amount of undcertainty in our 250 year return period, from 10 inches all the way to 20 inches.  If building infrastructure to a 250 year standard, I would pursue a sample size of 100 years or larger and set a large safety factor.  
+
+This experiment shows that the variance amongst the real stations might be more due to randomness in storm arrival than it was due to geography, as I originally believed.  
+
+This is a lower bound for the uncertainty in real-world applications, because we still have many stations out there for which we have not yet collected 100 years of data.  
 :::
 
 ::: {.callout-note}
 ## Response 5
-Synthesize your key findings from all analyses and discuss the broader implications for infrastructure design and climate risk assessment.
+
+When designing infrastructure in response to climate risk, we need to accurately asses risk, and then base large safety margins off of that assesment.  As important as it is to ask if we can afford to build a piece of infrastructure to a certain standard, we should also ask if we can afford to have that piece of infrastructure fail.  
+
 :::
 
