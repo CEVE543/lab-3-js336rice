@@ -95,7 +95,7 @@ This is a lower bound for the uncertainty in real-world applications, because we
 
 **Response 5:** Final Synthesis 
 
-When designing infrastructure in response to climate risk, we need to accurately asses risk, and then base large safety margins off of that assesment.  As important as it is to ask if we can afford to build a piece of infrastructure to a certain standard, we should also ask if we can afford to have that piece of infrastructure fail. 
+When designing infrastructure in response to climate risk, we need to accurately assess risk, and then base large safety margins off of that assessment.  As important as it is to ask if we can afford to build a piece of infrastructure to a certain standard, we should also ask if we can afford to have that piece of infrastructure fail. 
 
 ## Data Setup and Station Selection
 
@@ -785,7 +785,7 @@ This is a lower bound for the uncertainty in real-world applications, because we
 ::: {.callout-note}
 ## Response 5
 
-When designing infrastructure in response to climate risk, we need to accurately asses risk, and then base large safety margins off of that assesment.  As important as it is to ask if we can afford to build a piece of infrastructure to a certain standard, we should also ask if we can afford to have that piece of infrastructure fail.  
+When designing infrastructure in response to climate risk, we need to accurately assess risk, and then base large safety margins off of that assessment.  As important as it is to ask if we can afford to build a piece of infrastructure to a certain standard, we should also ask if we can afford to have that piece of infrastructure fail.  
 
 :::
 
